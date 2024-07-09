@@ -44,7 +44,7 @@
     NSString *beginColor = value[@"beginColor"];
     NSString *endColor = value[@"endColor"];
     NSString *titleColor = value[@"titleColor"];
-    NSString *tmn_code = value[@"tmnCode"];
+    NSString *tmn_code = value[@"tmn_code"];
     // NSString *tmn_code = @"ECOFAST1";
     
     self.latestScheme = scheme;
