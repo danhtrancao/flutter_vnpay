@@ -9,7 +9,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
   A Flutter plugin project to connect with vnpay.
                        DESC
+  s.homepage         = 'http://kgo.life'
   s.license          = { :file => '../LICENSE' }
+  s.author           = { 'rnb' => 'danhtrancao@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
