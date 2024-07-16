@@ -58,13 +58,21 @@ class MethodChannelFlutterVnpay extends FlutterVnpayPlatform {
       "titleColor": titleColor,
     };
     await methodChannel.invokeMethod('show', params);
-    await for (MethodCall m in _methodStream) {
-      if (m.method == "PaymentBack") {
-        final resultCode = m.arguments['resultCode'] as int?;
-        codeCallback?.call(resultCode);
-        return resultCode;
+    _methodStream.listen((event) {
+      if (event == 'PaymentBack') {
+        // Handle the event
+        print('PaymentBack event received');
+        // Remove all listeners if needed
+        // In Dart/Flutter, you typically don't remove listeners this way. Streams are handled automatically.
       }
-    }
+    });
+    // await for (MethodCall m in _methodStream) {
+    //   if (m.method == "PaymentBack") {
+    //     final resultCode = m.arguments['resultCode'] as int?;
+    //     codeCallback?.call(resultCode);
+    //     return resultCode;
+    //   }
+    // }
     return null;
   }
 }
