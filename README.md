@@ -53,7 +53,7 @@ Add this to you package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-	flutter_vnpay: ^0.0.2+3
+	flutter_vnpay: ^0.0.1
 ```
 
 #### 2\. Install
