@@ -47,7 +47,7 @@ class MethodChannelFlutterVnpay extends FlutterVnpayPlatform {
   }) async {
     final params = <String, dynamic>{
       "scheme": scheme,
-      "isSandbox": isSandbox,
+      "is_sandbox": isSandbox,
       "paymentUrl": paymentUrl,
       "tmn_code": tmnCode,
       "backAlert": backAlert,

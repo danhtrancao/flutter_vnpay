@@ -34,7 +34,7 @@
     [CallAppInterface setHomeViewController:[self viewControllerWithWindow:nil]];
 
     NSDictionary *value = [call arguments];
-    bool isSandbox = value[@"isSandbox"];
+    BOOL isSandbox = value[@"is_sandbox"];
     // BOOL isSandbox = NO;
     NSString *scheme = value[@"scheme"];
     NSString *backAlert = value[@"backAlert"];
@@ -51,7 +51,7 @@
 
     [CallAppInterface setSchemes:scheme];
     [CallAppInterface setIsSandbox:isSandbox];
-    [CallAppInterface setEnableBackAction:TRUE];
+    [CallAppInterface setEnableBackAction:YES];
     [CallAppInterface setAppBackAlert:backAlert];
     [CallAppInterface showPushPaymentwithPaymentURL:paymentUrl
                                           withTitle:title

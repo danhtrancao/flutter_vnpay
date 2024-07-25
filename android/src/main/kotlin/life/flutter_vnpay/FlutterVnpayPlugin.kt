@@ -79,10 +79,12 @@ class FlutterVnpayPlugin: FlutterPlugin, ActivityAware, MethodCallHandler {
       val params = call.arguments as HashMap<*, *>
       val paymentUrl = params["paymentUrl"] as String
       val scheme = params["scheme"] as String
+      val isSandbox = params["is_sandbox"] as Boolean
       val tmnCode = params["tmn_code"] as String
       val intent = Intent(applicationContext, VNP_AuthenticationActivity::class.java).apply {
         putExtra("url", paymentUrl)
         putExtra("scheme", scheme)
+        putExtra("is_sandbox", isSandbox)
         putExtra("tmn_code", tmnCode)
       }
       VNP_AuthenticationActivity.setSdkCompletedCallback { action ->
@@ -123,7 +125,7 @@ class FlutterVnpayPlugin: FlutterPlugin, ActivityAware, MethodCallHandler {
 
         //action == SuccessBackAction
         //Tạo nút sự kiện cho user click từ return url của merchant chuyển hướng về URL: http://success.sdk.merchantbackapp
-        //vnp_ResponseCode == 00) / Giao dịch thành công
+        //vnp_ResponseCode == 00 / Giao dịch thành công
       }
       activity?.startActivity(intent)
 //        activityBinding?.activity?.startActivityForResult(intent, 99)
