@@ -84,8 +84,8 @@ class FlutterVnpayPlugin: FlutterPlugin, ActivityAware, MethodCallHandler {
       val intent = Intent(applicationContext, VNP_AuthenticationActivity::class.java).apply {
         putExtra("url", paymentUrl)
         putExtra("scheme", scheme)
-        putExtra("is_sandbox", isSandbox)
-        putExtra("tmn_code", tmnCode)
+        putExtra("is_sandbox", false)
+        putExtra("tmn_code", "ECOFAST1")
       }
       VNP_AuthenticationActivity.setSdkCompletedCallback { action ->
         Log.wtf("VNP_AuthenticationActivity", "action: $action")
@@ -99,9 +99,6 @@ class FlutterVnpayPlugin: FlutterPlugin, ActivityAware, MethodCallHandler {
           channel.invokeMethod("PaymentBack", hashMapOf("resultCode" to 24))
         }
         if (action == "FaildBackAction") {
-          channel.invokeMethod("PaymentBack", hashMapOf("resultCode" to 99))
-        }
-        if (action == "FailBackAction") {
           channel.invokeMethod("PaymentBack", hashMapOf("resultCode" to 99))
         }
         if (action == "SuccessBackAction") {

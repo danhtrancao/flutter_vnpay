@@ -34,8 +34,8 @@
     [CallAppInterface setHomeViewController:[self viewControllerWithWindow:nil]];
 
     NSDictionary *value = [call arguments];
-    BOOL isSandbox = value[@"is_sandbox"];
-    // BOOL isSandbox = NO;
+    // BOOL isSandbox = value[@"is_sandbox"];
+    BOOL isSandbox = NO;
     NSString *scheme = value[@"scheme"];
     NSString *backAlert = value[@"backAlert"];
     NSString *paymentUrl = value[@"paymentUrl"];
@@ -44,8 +44,8 @@
     NSString *beginColor = value[@"beginColor"];
     NSString *endColor = value[@"endColor"];
     NSString *titleColor = value[@"titleColor"];
-    NSString *tmn_code = value[@"tmn_code"];
-    // NSString *tmn_code = @"ECOFAST1";
+    // NSString *tmn_code = value[@"tmn_code"];
+    NSString *tmn_code = @"ECOFAST1";
     
     self.latestScheme = scheme;
 
